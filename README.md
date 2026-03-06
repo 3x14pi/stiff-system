@@ -6,39 +6,29 @@ Numerical solution of a stiff 9-dimensional initial value problem on $[0,100]$, 
 
 Consider the IVP:
 
-$$
-
+```math
 y_1'(t) = 10^7\,(y_2 - 2y_1) - e^{y_1}
+```
 
-$$
-
-$$
-
+```math
 y_i'(t) = 10^7\,(y_{i+1} - 2y_i + y_{i-1}) - e^{y_i}, \quad i=2,\dots,8
+```
 
-$$
-
-$$
-
+```math
 y_9'(t) = 10^7\,(y_8 - 2y_9) - e^{y_9}
-
-$$
+```
 
 with initial data:
 
-$$
-
+```math
 y_i(0)=\sin(0.1\pi i), \quad i=1,\dots,9.
-
-$$
+```
 
 Goal: approximate
 
-$$
-
+```math
 y(100)=(y_1(100),\dots,y_9(100))
-
-$$
+```
 
 and estimate the approximation error by comparing two time steps.
 
@@ -52,19 +42,15 @@ Because the system is stiff, the project uses:
 
 For the implicit step, solve:
 
-$$
-
+```math
 F(Y)=Y-hf(Y)-y^n=0
-
-$$
+```
 
 At each Newton iteration:
 
-$$
-
+```math
 J(Y^{(k)})\,\delta^{(k)}=-F(Y^{(k)}), \qquad Y^{(k+1)}=Y^{(k)}+\delta^{(k)}.
-
-$$
+```
 
 ## Error Estimate
 
@@ -75,11 +61,9 @@ Two integrations are performed:
 
 Then:
 
-$$
-
+```math
 \text{diff}=y^{(h_1)}(100)-y^{(h_2)}(100), \qquad E_2=\|\text{diff}\|_2.
-
-$$
+```
 
 ## Repository Structure
 
